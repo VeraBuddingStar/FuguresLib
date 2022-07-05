@@ -29,6 +29,11 @@ namespace Figures
             _value = action(value);
             changeValues.Clear();
         }
+        protected void Update<T>(ref T _value, T value)
+        {
+            _value = value;
+            changeValues.Clear();
+        }
 
         /// <summary>
         /// Валидация значений, на метод доступа GET

@@ -1,5 +1,6 @@
 using Xunit;
 using Figures;
+using System;
 
 namespace FiguresXUnitTests
 {
@@ -37,6 +38,13 @@ namespace FiguresXUnitTests
             var triangle = new Triangle(3, 4, 5);
             Assert.Equal(6, triangle.CalculateSquareAtCompileTime());
 
+        }
+
+        [Fact]
+        public void NegativeFigureValue()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => new Circle(-1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(3, -3, 5));
         }
     }
 }
